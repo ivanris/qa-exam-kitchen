@@ -29,7 +29,7 @@ fixture('Itekako Automatski test2')
     
 
 
-test('Problem 2 MindClock', async t => {
+test('Problem 2 MindClock levi odgovori', async t => {
     await t
         .click(leto)
         .click(caj)
@@ -44,7 +44,7 @@ test('Problem 2 MindClock', async t => {
 
 
 })
-test('Problem 2 MindClock', async t => {
+test('Problem 2 MindClock desni odgovori', async t => {
     await t
         .click(zima)
         .click(kafa)
@@ -59,7 +59,7 @@ test('Problem 2 MindClock', async t => {
 
 
 })
-test('Problem 12 MindClock array', async t => {
+test('Problem 12 MindClock array 1', async t => {
  
     for (let i =0;i <leviOdgovori.length;i++){
     await t
@@ -69,7 +69,7 @@ test('Problem 12 MindClock array', async t => {
       .click(readMYMind)
 })
 
-test('Problem 12 MindClock array', async t => {
+test('Problem 12 MindClock array 2', async t => {
  
     for (let i =0;i <desniOdgovori.length;i++){
     await t

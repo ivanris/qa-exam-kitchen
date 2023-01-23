@@ -3,4 +3,8 @@ repository for qa automation test exam
 
 Technology used: Testcafe
 
-Runinng tests: From root qa-exam-kitchen/npm run tests
+Precondition: Instalirati NodeJS, VS Code i njemu instaliraty Testcafe Test Runner extenziju.
+Klonirati repo sa gita: https://github.com/ivanris/qa-exam-kitchen.git
+Otvoriti kloniran folder u VS code editoru
+
+Pokretanje testa sa komandom: npm run test
