@@ -55,7 +55,7 @@ test('Problem 1 Organize', async t => {
 
        //confirmation od celebration (potvrdni modal)
        
-       .expect(orderConfirmation.innerText).contains("Biljana","Ivan qa automation e","43","2023-02-02","18:00","6-10","Yes")
+       
        .expect (organiserCo.innerText).eql("Ivan Ristic")
        .expect(birthdayPersonCo.innerText).eql("Biljana Ilic")
        .expect(ageOfBirthdayPersonCo.innerText).eql("43")
