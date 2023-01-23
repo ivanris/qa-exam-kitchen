@@ -42,8 +42,8 @@ fixture('Itekako Automatski test')
 test('Problem 1 Organize', async t => {
     await t
        .setTestSpeed(0.5)
-       .typeText(organiser, 'Ivan qa automation e')
-       .typeText(birthdayPerson,"Biljana")
+       .typeText(organiser, 'Ivan Ristic')
+       .typeText(birthdayPerson,"Biljana Ilic")
        .typeText(ageOfBirthdayPerson,"43")
        .typeText(when,'2023-02-02')
        .typeText(atWhatTime,"18:00")
@@ -56,8 +56,8 @@ test('Problem 1 Organize', async t => {
        //confirmation od celebration (potvrdni modal)
        
        .expect(orderConfirmation.innerText).contains("Biljana","Ivan qa automation e","43","2023-02-02","18:00","6-10","Yes")
-       .expect (organiserCo.innerText).eql("Ivan qa automation e")
-       .expect(birthdayPersonCo.innerText).eql("Biljana")
+       .expect (organiserCo.innerText).eql("Ivan Ristic")
+       .expect(birthdayPersonCo.innerText).eql("Biljana Ilic")
        .expect(ageOfBirthdayPersonCo.innerText).eql("43")
        .expect(whenCo.innerText).eql("2023-02-02")  
        .expect(atWhatTimeCo.innerText).eql("18:00")   
@@ -80,8 +80,8 @@ await t
 //.setTestSpeed(0.1)
 .expect(qaExamKitchen.innerText).contains("QA Exam Kitchen")
 
-.typeText(organiser, 'Ivan qa automation e')
-.typeText(birthdayPerson,"Biljana")
+.typeText(organiser, 'Ivan Ristic')
+.typeText(birthdayPerson,"Biljana Ilic")
 .typeText(ageOfBirthdayPerson,"43")
 .typeText(when,'2023-02-02')
 .typeText(atWhatTime,"18:00")
