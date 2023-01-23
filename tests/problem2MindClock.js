@@ -29,7 +29,7 @@ fixture('Itekako Automatski test2')
     
 
 
-test('Problem 12 MindClock', async t => {
+test('Problem 2 MindClock', async t => {
     await t
         .click(leto)
         .click(caj)
@@ -44,7 +44,7 @@ test('Problem 12 MindClock', async t => {
 
 
 })
-test('Problem 12 MindClock', async t => {
+test('Problem 2 MindClock', async t => {
     await t
         .click(zima)
         .click(kafa)

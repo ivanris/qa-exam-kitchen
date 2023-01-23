@@ -41,7 +41,7 @@ fixture('Itekako Automatski test')
 
 test('Problem 1 Organize', async t => {
     await t
-       .setTestSpeed(0.5)
+      // .setTestSpeed(0.5)
        .typeText(organiser, 'Ivan Ristic')
        .typeText(birthdayPerson,"Biljana Ilic")
        .typeText(ageOfBirthdayPerson,"43")
@@ -65,8 +65,8 @@ test('Problem 1 Organize', async t => {
        .expect(allergyCo.innerText).eql("Yes")
 
            //local storage check
-       .expect(localStorageGet("Organizer")).eql("Ivan qa automation e")
-       .expect(localStorageGet("Birthday_Person")).eql("Biljana")
+       .expect(localStorageGet("Organizer")).eql("Ivan Ristic")
+       .expect(localStorageGet("Birthday_Person")).eql("Biljana Ilic")
        .expect(localStorageGet("Age")).eql("43")
        .expect(localStorageGet("Date")).eql("2023-02-02")
        .expect(localStorageGet("Time")).eql("18:00")
