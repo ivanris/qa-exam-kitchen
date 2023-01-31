@@ -34,6 +34,8 @@ const noOfPersonsCo = Selector("span#gur")
 const allergyCo = Selector("span#alr")
 
 
+
+
 fixture('Itekako Automatski test')
     .page('http://10.15.1.204:3000/reserve')
     
