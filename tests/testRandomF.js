@@ -21,7 +21,11 @@ const desert = [desert1,desert2,desert3,desert4,desert5]
 
 
 const ukupno = Selector("span#ukupno")
-const cena = 0
+
+var cena = 0
+
+//const value = await Selector(selector).attr('attributeName');
+//const intValue = parseInt(value, 10);
 
 
 
@@ -60,6 +64,11 @@ test('Problem 3 meny', async t => {
   
   
       for (let i =0;i <result.length;i++){
+        var  price = await Selector(".price(i)").textContent
+        var intPrice = parseInt(price.slice(1), 10)
+        console.log("The price is: ${intPrice}");
+        cena = intPrice + cena
+
           await t
           .click(result[i])
           .wait(3000)
