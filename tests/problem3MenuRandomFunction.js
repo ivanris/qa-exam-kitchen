@@ -34,7 +34,7 @@ fixture('Itekako Automatski test 3 with Random function')
 
 
 
-test('Problem 3 meny', async t => {
+test('Problem 3 meny Random Function', async t => {
       await t
          .maximizeWindow()
          .eval(() => {
@@ -64,7 +64,7 @@ test('Problem 3 meny', async t => {
   
   
       for (let i =0;i <result.length;i++){
-        var  price = await Selector(".price(i)").textContent
+        var  price = await Selector(".price").textContent
         var intPrice = parseInt(price.slice(1), 10)
         console.log("The price is: ${intPrice}");
         cena = intPrice + cena
@@ -75,7 +75,7 @@ test('Problem 3 meny', async t => {
           }
       await t
       .setTestSpeed(0.5)
-      .expect((ukupno).innerText).eql(cena)
+      .expect((ukupno).innerText).eql(cena) //Nisam uspeo da izvucem cenu proizvoda zajedno sa random funkcijom.
     
     
 })    

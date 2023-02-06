@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"testcafe chrome tests/testRandomF.js"
+    "test":"testcafe chrome tests/**.js"
     
   },
   "author": "",
