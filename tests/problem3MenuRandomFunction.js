@@ -43,7 +43,7 @@ test('Problem 3 meny Random Function', async t => {
 
         function randomSelection(meal, desert) {
           const selection = [];
-          let duplicatedElement = meal[Math.floor(Math.random() * meal.length)];
+          
         
           for (let i = 0; i < 5; i++) {
             let randomIndex = Math.floor(Math.random() * 2);
@@ -56,7 +56,7 @@ test('Problem 3 meny Random Function', async t => {
               i--;
             }
           }
-        
+          let duplicatedElement = selection[Math.floor(Math.random() * meal.length)];
           selection.push(duplicatedElement);
           return selection;
         }

@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"testcafe chrome tests/**.js"
-    
-  },
+    "test":"testcafe chrome tests/testHover.js"
+      },
   "author": "",
   "license": "ISC",
   "dependencies": {
