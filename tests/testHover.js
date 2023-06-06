@@ -2,11 +2,19 @@ import { Selector } from 'testcafe';
 
 fixture('Hover Test')
     .page('http://the-internet.herokuapp.com/hovers'); 
+
+    /*
+    U TestCafe-u mogu se koristiti metode hover, hoverTo i hoverSelector.
+      1. await t.hover(element);
+      2. await t.hoverTo(element, offsetX, offsetY);
+      3. await t.hoverSelector(selector);
+    U ovom testu koristim opciju 1.  
+    */
   
 
 test('Provera hover opcije', async t => {
 
-    // Odabiranje selektora za objekate koji će biti testirani:
+    // Odredjivanje selektora za objekate koji će biti testirani:
     const hoversObj = Selector('h3').withText(/Hovers/);
     const hoverInfo = Selector('p').withText("Hover over the image for additional information");
     const objectSelector1 = Selector('#content > div > div:nth-child(3) > img');
@@ -20,7 +28,8 @@ test('Provera hover opcije', async t => {
     const labelSelector1 = Selector('h5').withText('name: user1');
     const labelSelector2 = Selector('h5').withText('name: user2')
     const labelSelector3 = Selector('h5').withText('name: user3')
-    // View profile link za svaki user
+
+    // View profile - link za svaki user
     const viewProfile1 = Selector('a').withAttribute('href', '/users/1');
     const viewProfile2 = Selector('a').withAttribute('href', '/users/2');
     const viewProfile3 = Selector('a').withAttribute('href', '/users/3');
@@ -61,19 +70,19 @@ test('Provera hover opcije', async t => {
     await t.expect(labelSelector3.visible).ok();
     await t.expect(viewProfile3.visible).ok();
 
-    // Provera linka - View profile user1 i vracanje nazad
+    // Provera linka - View profile user1 i vracanje nazad na prethodnu stranicu
     await t.hover(objectSelector1);
     await t.click(viewProfile1);
     await t.expect(notFoundPage.innerText).contains('Not Found');
     await t.eval(() => window.history.back());
 
-    // Provera linka - View profile user2 i vracanje nazad
+    // Provera linka - View profile user2 i vracanje nazad na prethodnu stranicu
     await t.hover(objectSelector2);
     await t.click(viewProfile2);
     await t.expect(notFoundPage.innerText).contains('Not Found');
     await t.eval(() => window.history.back());
 
-    // Provera linka - View profile user3 i vracanje nazad
+    // Provera linka - View profile user3 i vracanje nazad na prethodnu stranicu
     await t.hover(objectSelector3);
     await t.click(viewProfile3);
     await t.expect(notFoundPage.innerText).contains('Not Found');
