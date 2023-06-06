@@ -38,6 +38,9 @@ test('Provera hover opcije', async t => {
     await t.expect(labelSelector1.visible).notOk();
     await t.expect(labelSelector2.visible).notOk();
     await t.expect(labelSelector3.visible).notOk();
+    await t.expect(viewProfile1.visible).notOk();
+    await t.expect(viewProfile2.visible).notOk();
+    await t.expect(viewProfile3.visible).notOk();
 
     // Usporavanje testa
     //await t.setTestSpeed(0.5);
