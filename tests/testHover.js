@@ -5,16 +5,15 @@ fixture('Hover Test')
   
 
 test('Provera hover opcije', async t => {
-    // Odaberite selektor za objekat koji će biti testiran
 
+    // Odabiranje selektora za objekate koji će biti testirani:
     const hoversObj = Selector('h3').withText(/Hovers/);
     const hoverInfo = Selector('p').withText("Hover over the image for additional information");
     const objectSelector1 = Selector('#content > div > div:nth-child(3) > img');
     const objectSelector2 = Selector('#content > div > div:nth-child(4) > img')
     const objectSelector3 = Selector('#content > div > div:nth-child(5) > img');
-    //const eSeleniumLink = Selector("#page-footer > div > div > a");
     const eSLink = Selector('a').withAttribute('target', '_blank').withAttribute('href', 'http://elementalselenium.com/');
-    const elementalSelenium = Selector('h1').withText('Elemental Selenium');
+    const elementalSelenium = Selector('h1.home-header')//.withText('Elemental Selenium');
     const notFoundPage = Selector("h1").withText('Not Found');
     
     // Selektor za natpis ispod objekta koji se očekuje da se pojavi
@@ -33,7 +32,7 @@ test('Provera hover opcije', async t => {
     await t .expect(objectSelector1.visible).ok();
     await t .expect(objectSelector2.visible).ok();
     await t .expect(objectSelector3.visible).ok();
-    //await t .expect(eSeleniumlink.visible).ok();
+    await t .expect(eSLink.visible).ok();
 
     // Provera da li se natpis ispod objekta ne prikazuje pre hoverovanja
     await t.expect(labelSelector1.visible).notOk();
@@ -41,43 +40,44 @@ test('Provera hover opcije', async t => {
     await t.expect(labelSelector3.visible).notOk();
 
     // Usporavanje testa
-    await t.setTestSpeed(0.5);
+    //await t.setTestSpeed(0.5);
+
     // Provera da li su elementi user i view profile vidljivi posle hoverovanja preko elementa
     // Element 1
     await t.hover(objectSelector1);
     await t.expect(labelSelector1.visible).ok();
     await t.expect(viewProfile1.visible).ok();
-    // Element2
+
+    // Element 2
     await t.hover(objectSelector2);
     await t.expect(labelSelector2.visible).ok();
     await t.expect(viewProfile2.visible).ok();
-    // Element 3 
+
+    // Element 3
     await t.hover(objectSelector3);
     await t.expect(labelSelector3.visible).ok();
     await t.expect(viewProfile3.visible).ok();
 
-    // Provera linka - View profile i vracanje nazad
+    // Provera linka - View profile user1 i vracanje nazad
     await t.hover(objectSelector1);
     await t.click(viewProfile1);
     await t.expect(notFoundPage.innerText).contains('Not Found');
     await t.eval(() => window.history.back());
-    // Provera linka - View profile i vracanje nazad
+
+    // Provera linka - View profile user2 i vracanje nazad
     await t.hover(objectSelector2);
     await t.click(viewProfile2);
     await t.expect(notFoundPage.innerText).contains('Not Found');
     await t.eval(() => window.history.back());
-    // Provera linka - View profile i vracanje nazad
+
+    // Provera linka - View profile user3 i vracanje nazad
     await t.hover(objectSelector3);
     await t.click(viewProfile3);
     await t.expect(notFoundPage.innerText).contains('Not Found');
     await t.eval(() => window.history.back());
-    // Provera selenijum linka
-  
+
+    // Provera "Elemental Selenijum" linka i potvrda o novootvorenoj stranici
     await t.click(eSLink);
-    //await t.wait(3000);
-   // await t.resizeWindow(1000, 1000);
-    await t.expect(elementalSelenium.innerText).contains('Elemental Selenium');
+    await t.expect(elementalSelenium.innerText).contains('Make sure your code lands');
 
-
-  
 });
