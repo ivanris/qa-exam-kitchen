@@ -18,15 +18,17 @@ fixture('Simulacija prvog ulaza na stranicu')
 
    
     //await t.setTestSpeed(0.01);
-    // Provera da li se modal nalazi na stranici prilikom prvog ucitavanja
+    // Provera da li se modal nalazi na stranici i da li je vidljiv prilikom prvog ucitavanja
+    await t.expect(modalWindow.exists).ok();
     await t.expect(modalWindow.visible).ok();
      //Gasenje modala na close dugme
     await t.click(closeModalButton);
-    //Provera da li se modal nalazi na stranici posle gasenja modala
-    await t.expect(modalWindow.visible).notOk();
+    //Provera da li se modal nalazi na stranici i da li je vidljiv posle gasenja modala
+    await t.expect(modalWindow.exists).ok(); //prisutan na stranici
+    await t.expect(modalWindow.visible).notOk(); //nije vidljiv
     // Refresh stranice
     await t.eval(() => location.reload(true)); 
-    //provera da li se modal nalazi na stranici posle refresha / ocekivano je da se ne pojavi jer nije obrisan cookies
+    //provera da li je modal vidljiv na stranici posle refresha / ocekivano je da se ne pojavi jer nije obrisan cookies
      await t.expect(modalWindow.visible).notOk();
     // brisanje cookies 
     await t.deleteCookies();
@@ -34,7 +36,7 @@ fixture('Simulacija prvog ulaza na stranicu')
     await t.eval(() => location.reload(true)); 
     //await t.click(resetButon);
 
-    //provera da li se modal nalazi na stranici posle brisanja cookies i refresh stranice/ ocekivano je da se pojavi.
+    //provera da li se modal nalazi na stranici i da li je vidljiv posle brisanja cookies i refresh stranice/ ocekivano je da se pojavi.
     await t.expect(modalWindow.visible).ok();
     await t.expect(modalWindow.exists).ok();
     
