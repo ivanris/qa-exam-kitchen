@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"testcafe chrome tests/testHover.js"
+    "test":"testcafe chrome tests/simulacijaPonovnogUlaza.js", 
+    "testm":"testcafe firefox tests/**.js",
+    "tests":"testcafe safari tests/**.js",
+    "testch":"testcafe chrome:headless tests/testHover.js",
+    "testcmobile":"testcafe chrome:emulation:device=iphone X tests/testHover.js"
       },
   "author": "",
   "license": "ISC",
